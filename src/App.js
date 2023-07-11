@@ -13,8 +13,8 @@ const App = () => {
         <BrowserRouter>
           <Navbar />
           <Routes>
-            <Route path="/" element={<Shop />} />
-            <Route path="/cart" element={<Cart />} />
+            <Route path="/ecommerce-react-app/home" element={<Shop />} />
+            <Route path="/ecommerce-react-app/cart" element={<Cart />} />
           </Routes>
         </BrowserRouter>
       </ShopContextProvider>

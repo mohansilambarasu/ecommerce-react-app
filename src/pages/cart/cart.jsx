@@ -57,7 +57,7 @@ const Cart = () => {
                 </table>
                 <div className="flex flex-col smaller:flex-row tb:flex-col xl:flex-row justify-center gap-4 mt-2 ">
                   <button className="p-2 border border-dark-100 xs:flex-2 hover:bg-dark-100 hover:text-white">
-                    <HashLink to="/#products" className="tracking-wider">
+                    <HashLink to="/ecommerce-react-app/home/#products" className="tracking-wider">
                       <ArrowCircleLeftIcon className="mr-3" />
                       Continue Shopping
                     </HashLink>
@@ -72,7 +72,7 @@ const Cart = () => {
             <p className="primary-heading mb-4 text-light-100">Cart is empty !</p>
 
             <button className="p-2 border border-dark-100 text-light-100 hover:bg-light-100 hover:text-white">
-              <HashLink to="/#products" className="tracking-wider">
+              <HashLink to="/ecommerce-react-app/home/#products" className="tracking-wider">
                 <ArrowCircleLeftIcon className="mr-2" />
                 Start Shopping
               </HashLink>

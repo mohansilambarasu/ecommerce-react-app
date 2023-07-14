@@ -4,7 +4,6 @@ import Product from "../../components/Product/Product";
 import Banner from "../../components/Banner/Banner";
 import aboutimg from "../../assets/banner/about.jpg";
 import { HashLink } from "react-router-hash-link";
-import Footer from "../../components/Footer/Footer";
 
 const Shop = () => {
   const [category, setCategory] = useState("type1");
@@ -153,7 +152,6 @@ const Shop = () => {
         </div>
       </div>
 
-      <Footer />
     </>
   );
 };

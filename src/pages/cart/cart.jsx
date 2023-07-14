@@ -5,11 +5,9 @@ import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
 import { ShopContext } from "../../context/shopcontext";
 import CartItem from "../../components/CartItem/CartItem";
 import { HashLink } from "react-router-hash-link";
-import Footer from "../../components/Footer/Footer";
 
 const Cart = () => {
-  const { cartItems, getTotalAmount, addToCart, removeFromCart } =
-    useContext(ShopContext);
+  const { cartItems, getTotalAmount, resetCart } = useContext(ShopContext);
 
   const totalAmount = getTotalAmount();
 
@@ -19,21 +17,25 @@ const Cart = () => {
         {totalAmount > 0 ? (
           <>
             <div className="tb:flex-1.5 px-3">
-              {/* <h1 className="primary-text px=3 mb-2">Your Cart</h1> */}
               <div className={`${totalAmount > 0 ? "block" : "hidden"}`}>
                 {PRODUCTS.map((product) => {
                   if (cartItems[product.id] > 0) {
                     return <CartItem key={product.id} data={product} />;
                   }
                 })}
+                
+                <button
+                  className="primary-btn card-button "
+                  onClick={() => resetCart()}
+                >
+                  Reset Cart
+                </button>
               </div>
             </div>
 
             <div className="tb:flex-1 mx-3 tb:m-0">
-              {/* <h1 className="primary-text px=3 mb-2">Payment</h1> */}
-
               <div className="p-3 shadow-3xl rounded-md h-max">
-                <table class="table-auto w-full primary-text">
+                <table className="table-auto w-full primary-text">
                   <tbody>
                     <tr>
                       <td>Sub Total</td>
@@ -55,24 +57,36 @@ const Cart = () => {
                     </tr>
                   </tbody>
                 </table>
+
                 <div className="flex flex-col smaller:flex-row tb:flex-col xl:flex-row justify-center gap-4 mt-2 ">
                   <button className="p-2 border border-dark-100 xs:flex-2 hover:bg-dark-100 hover:text-white">
-                    <HashLink to="/ecommerce-react-app/#products" className="tracking-wider">
+                    <HashLink
+                      to="/ecommerce-react-app/#products"
+                      className="tracking-wider"
+                    >
                       <ArrowCircleLeftIcon className="mr-3" />
                       Continue Shopping
                     </HashLink>
                   </button>
-                  <button className="p-2 border border-dark-100 xs:flex-1 tracking-wider hover:bg-light-100 hover:text-white">Pay Now</button>
+
+                  <button className="p-2 border border-dark-100 xs:flex-1 tracking-wider hover:bg-light-100 hover:text-white">
+                    Pay Now
+                  </button>
                 </div>
               </div>
             </div>
           </>
         ) : (
           <div className="p-4 w-full text-center">
-            <p className="primary-heading mb-4 text-light-100">Cart is empty !</p>
+            <p className="primary-heading mb-4 text-light-100">
+              Cart is empty !
+            </p>
 
             <button className="p-2 border border-dark-100 text-light-100 hover:bg-light-100 hover:text-white">
-              <HashLink to="/ecommerce-react-app/#products" className="tracking-wider">
+              <HashLink
+                to="/ecommerce-react-app/#products"
+                className="tracking-wider"
+              >
                 <ArrowCircleLeftIcon className="mr-2" />
                 Start Shopping
               </HashLink>
@@ -80,10 +94,6 @@ const Cart = () => {
           </div>
         )}
       </div>
-
-      <h1 className="primary-text text-center py-5 border-t-2 mt-5 font-semibold tracking-wider text-light-100">
-        Developed by Mohan
-      </h1>
     </>
   );
 };

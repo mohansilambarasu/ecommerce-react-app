@@ -5,11 +5,13 @@ import { HashLink } from "react-router-hash-link";
 const Footer = () => {
   return (
     <>
-      <div className="bg-light-100 text-white">
-        <h1 className="text-center primary-text py-5 font-semibold tracking-wider">
-          Developed by Mohan
-        </h1>
-      </div>
+      <h1 className="text-center py-5 border-t-2 mt-5">
+        Images - Designed by Freepik
+      </h1>
+
+      <h1 className="primary-text text-center py-5 pt-0 font-semibold tracking-wider text-light-100">
+        Developed by Mohan &#128640;
+      </h1>
     </>
   );
 };

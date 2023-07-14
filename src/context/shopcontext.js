@@ -41,7 +41,11 @@ export const ShopContextProvider = ({ children }) => {
     return totalAmount;
   };
 
-  const contextValue = { cartItems, addToCart, removeFromCart, getTotalAmount };
+  const resetCart = () => {
+    setCartItems(getDefaultCart());
+  }
+
+  const contextValue = { cartItems, addToCart, removeFromCart, getTotalAmount, resetCart};
 
   return (
     <ShopContext.Provider value={contextValue}>{children}</ShopContext.Provider>
